@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BANDO Partners</title>
+    <style>
+        body { 
+            margin: 0; 
+            font-family: Helvetica, sans-serif;
+            background: #000;
+            color: #eae1b9;
+            padding-top: 100px;
+        }
+        .partners {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .partner-logo {
+            width: 150px;
+            margin: 30px;
+            filter: brightness(0) invert(1);
+        }
+        h1 {
+            color: #6b6b53;
+            font-size: 24px;
+            text-transform: lowercase;
+            letter-spacing: 1px;
+        }
+        .menu {
+            position: fixed;
+            top: 30px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 40px;
+            box-sizing: border-box;
+            z-index: 100;
+        }
+        .menu a {
+            color: #eae1b9;
+            text-decoration: none;
+            font-size: 23px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+        .menu a:hover {
+            color: #6b6b53;
+        }
+        .menu a:nth-child(1) {
+            margin-right: auto;
+        }
+        .menu a:nth-child(2) {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .menu a:nth-child(3) {
+            margin-left: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <a href="index.html">HOME</a>
+        <a href="partners.html">PARTNERS</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+    </div>
+
+    <div class="partners">
+        <h1>our partners</h1>
+        <img src="https://via.placeholder.com/150x80.png?text=LOGO+1" class="partner-logo">
+        <img src="https://via.placeholder.com/150x80.png?text=LOGO+2" class="partner-logo">
+        <p>These brands support our community and events</p>
+    </div>
+</body>
+</html>
