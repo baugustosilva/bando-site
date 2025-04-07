@@ -10,6 +10,8 @@
             color: #eae1b9;
             overflow-x: hidden;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         
         /* Menu Superior */
@@ -67,11 +69,19 @@
             z-index: -1;
         }
         
-        /* Container de Conteúdo */
+        /* Container de Conteúdo - Centralizado Verticalmente */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 0; /* Espaço para o menu e logo */
+        }
+        
         .content-container {
-            position: relative;
             max-width: 800px;
-            margin: 120px auto 40px; /* Espaçamento ajustado */
+            width: 90%;
+            margin: 0 auto;
             padding: 40px;
             background: rgba(0,0,0,0.7);
             border-radius: 10px;
@@ -97,7 +107,7 @@
         .footer-logo {
             display: block;
             width: 200px;
-            margin: 20px auto 40px; /* Espaçamento reduzido */
+            margin: 40px auto;
             position: relative;
             z-index: 10;
         }
@@ -109,13 +119,13 @@
             }
             
             .content-container {
-                margin: 100px 20px 30px;
                 padding: 25px;
+                width: 85%;
             }
             
             .footer-logo {
                 width: 150px;
-                margin: 15px auto 30px;
+                margin: 30px auto;
             }
         }
     </style>
@@ -130,26 +140,28 @@
 
     <!-- Vídeo de Fundo -->
     <video autoplay muted loop playsinline class="video-bg">
-  <source src="assets/bando.mp4" type="video/mp4">
-</video>
+        <source src="assets/bando.mp4" type="video/mp4">
+    </video>
     <div class="overlay"></div>
 
-    <!-- Conteúdo Principal -->
-    <div class="content-container">
-        <h1>PEDALAR É A DESCULPA.</h1>
-        <p>O BANDO não nasceu com um plano.</p>
-        <p></p>Nasceu do impulso de pedalar, de estar junto, de formar um corpo em movimento. Um grupo que se move como se move uma ideia — viva, orgânica e concreta.</p>
-        
-        <p>Não somos assessoria, nem marca e não temos protocolo. Somos um coletivo. Um organismo que pedala porque o mundo exige. Porque o corpo pede. Porque estar em grupo faz sentido quando a paisagem muda.</p>
-        
-        <p>Nosso ciclismo não se limita à estrada: ele é linguagem, é estética, é maneira de existir. Registramos nossos encontros porque sabemos que memória sem registro se desfaz. Mas o que documentamos não é só o pedal — é a vida que cabe entre a largada e a pausa pro café.</p>
+    <!-- Conteúdo Principal Centralizado -->
+    <div class="main-content">
+        <div class="content-container">
+            <h1>PEDALAR É A DESCULPA.</h1>
+            <p>O BANDO não nasceu com um plano.</p>
+            <p>Nasceu do impulso de pedalar, de estar junto, de formar um corpo em movimento. Um grupo que se move como se move uma ideia — viva, orgânica e concreta.</p>
+            
+            <p>Não somos assessoria, nem marca e não temos protocolo. Somos um coletivo. Um organismo que pedala porque o mundo exige. Porque o corpo pede. Porque estar em grupo faz sentido quando a paisagem muda.</p>
+            
+            <p>Nosso ciclismo não se limita à estrada: ele é linguagem, é estética, é maneira de existir. Registramos nossos encontros porque sabemos que memória sem registro se desfaz. Mas o que documentamos não é só o pedal — é a vida que cabe entre a largada e a pausa pro café.</p>
 
-        <p>Acreditamos no conteúdo como forma de partilha e na bicicleta como extensão do que somos: reais, tangíveis, imperfeitos e em constante movimento.</p>
+            <p>Acreditamos no conteúdo como forma de partilha e na bicicleta como extensão do que somos: reais, tangíveis, imperfeitos e em constante movimento.</p>
 
-        <p>Um bando, no sentido mais amplo da palavra — de amigos, de ideias, de intenções. De quem compete, de quem contempla, de quem constrói comunidade sem pedir licença.</p>
+            <p>Um bando, no sentido mais amplo da palavra — de amigos, de ideias, de intenções. De quem compete, de quem contempla, de quem constrói comunidade sem pedir licença.</p>
+        </div>
+
+        <!-- Logo Fixa -->
+        <img src="assets/logo-bando-1.png" class="footer-logo" alt="BANDO">
     </div>
-
-    <!-- Logo Fixa (sem randomização) -->
-    <img src="assets/logo-bando-1.png" class="footer-logo" alt="BANDO">
 </body>
 </html>
