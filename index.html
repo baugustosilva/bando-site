@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <title>BANDO.CC | O ciclismo é uma facção a cada dia mais organizada.</title>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>BANDO.CC | O ciclismo é uma facção a cada dia mais organizada.</title>
     <style>
-        body { 
-            margin: 0; 
+        body {
+            margin: 0;
             font-family: Helvetica, Arial, sans-serif;
             color: #eae1b9;
             overflow-x: hidden;
+            min-height: 100vh;
         }
-        
+
         /* Menu Superior */
         .menu {
             position: fixed;
@@ -22,6 +22,7 @@
             box-sizing: border-box;
             z-index: 100;
         }
+
         .menu a {
             color: #eae1b9;
             text-decoration: none;
@@ -30,33 +31,26 @@
             text-transform: uppercase;
             font-weight: 400;
         }
+
         .menu a:hover {
             color: #6b6b53;
         }
+
         .menu a:nth-child(1) {
             margin-right: auto;
         }
+
         .menu a:nth-child(2) {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
         }
+
         .menu a:nth-child(3) {
             margin-left: auto;
         }
-        
-        /* Logo Central */
-        .logo {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px;
-            max-width: 80vw;
-            z-index: 10;
-        }
-        
-        /* Video Background */
+
+        /* Video de Fundo */
         .video-bg {
             position: fixed;
             top: 0;
@@ -66,7 +60,7 @@
             object-fit: cover;
             z-index: -2;
         }
-        
+
         /* Overlay */
         .overlay {
             position: fixed;
@@ -74,43 +68,71 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
             z-index: -1;
         }
-        
-        /* Rodapé (desativado) */
-        .footer-partners {
-            display: none;
+
+        /* Conteúdo Central */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding-top: 100px; /* espaço pro menu fixo */
+            padding-bottom: 100px;
+            box-sizing: border-box;
+            text-align: center;
+            z-index: 10;
+            position: relative;
         }
-    </style>
-    <script>
-        // Função para carregar logo aleatória
-        function loadRandomLogo() {
-            // Número total de logos (4 conforme solicitado)
-            const totalLogos = 4;
-            
-            // Gerar número aleatório entre 1 e 4
-            const randomNum = Math.floor(Math.random() * totalLogos) + 1;
-            
-            // Construir caminho da imagem
-            const logoPath = `assets/logo-bando-${randomNum}.png`;
-            
-            // Aplicar ao elemento da logo
-            const logoElement = document.getElementById('bando-logo');
-            logoElement.src = logoPath;
-            
-            // Pré-carregar as outras logos para melhor performance
-            for(let i = 1; i <= totalLogos; i++) {
-                if(i !== randomNum) {
-                    const img = new Image();
-                    img.src = `assets/logo-bando-${i}.png`;
-                }
+
+        h1 {
+            font-size: 48px;
+            text-transform: uppercase;
+            color: #eae1b9;
+            margin-bottom: 40px;
+        }
+
+        /* Logos Parceiras */
+        .partner-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 20px;
+            max-width: 1000px;
+        }
+
+        .partner-logos a {
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .partner-logos a:hover {
+            transform: scale(1.1);
+        }
+
+        .partner-logos img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .menu a {
+                font-size: 18px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .partner-logos img {
+                max-width: 100px;
             }
         }
-        
-        // Carregar logo aleatória quando a página carregar
-        window.addEventListener('load', loadRandomLogo);
-    </script>
+    </style>
 </head>
 <body>
     <!-- Menu Superior -->
@@ -120,18 +142,29 @@
         <a href="contact.html">CONTACT</a>
     </nav>
 
-    <!-- Logo Central (com ID adicionado) -->
-    <img id="bando-logo" class="logo" alt="BANDO">
-
     <!-- Vídeo de Fundo -->
     <video autoplay muted loop playsinline class="video-bg">
-  <source src="assets/bando.mp4" type="video/mp4">
-</video>
+        <source src="assets/bando.mp4" type="video/mp4">
+    </video>
     <div class="overlay"></div>
 
-    <!-- Rodapé com Parceiros (desativado) -->
-    <div class="footer-partners">
-        <!-- Conteúdo mantido para reativação futura -->
+    <!-- Conteúdo Principal -->
+    <div class="main-content">
+        <h1>PEDALAR É A DESCULPA.</h1>
+
+        <!-- Marcas Parceiras -->
+        <div class="partner-logos">
+            <a href="https://www.parceiro1.com.br" target="_blank">
+                <img src="assets/logos/parceiro1.png" alt="Parceiro 1">
+            </a>
+            <a href="https://www.parceiro2.com.br" target="_blank">
+                <img src="assets/logos/parceiro2.png" alt="Parceiro 2">
+            </a>
+            <a href="https://www.parceiro3.com.br" target="_blank">
+                <img src="assets/logos/parceiro3.png" alt="Parceiro 3">
+            </a>
+            <!-- Adicione mais logos conforme necessário -->
+        </div>
     </div>
 </body>
 </html>
