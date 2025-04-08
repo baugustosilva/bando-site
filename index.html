@@ -77,6 +77,27 @@
             background: rgba(0,0,0,0.5);
             z-index: -1;
         }
+
+        .partner-logos-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 20;
+}
+
+.partner-logos-fixed img {
+    width: 120px; /* ajuste conforme necessário */
+    opacity: 0.7;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.partner-logos-fixed img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
         
         /* Rodapé (desativado) */
         .footer-partners {
@@ -129,6 +150,15 @@
 </video>
     <div class="overlay"></div>
 
+    <!-- Logos dos Parceiros -->
+  <div class="partner-logos-fixed">
+    <a href="https://www.nomadsports.com.br/" target="_blank">
+      <img src="assets/parceiro1.png" alt="Nomad Sports" />
+    </a>
+    <a href="https://www.sensebike.com.br/collections/swift-estrada" target="_blank">
+      <img src="assets/parceiro2.png" alt="Swift by Sense" />
+    </a>
+    
     <!-- Rodapé com Parceiros (desativado) -->
     <div class="footer-partners">
         <!-- Conteúdo mantido para reativação futura -->
