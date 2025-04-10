@@ -57,10 +57,11 @@
 
     .center-link {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       height: 100vh;
-      text-align: center;
+      padding-left: 300px;
+      gap: 100px;
     }
 
     .center-link a {
@@ -78,25 +79,25 @@
     }
 
     .partner-logos-fixed {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    z-index: 20;
-}
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 20;
+    }
 
-.partner-logos-fixed img {
-    width: 120px; /* ajuste conforme necessário */
-    opacity: 0.7;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
+    .partner-logos-fixed img {
+      width: 120px;
+      opacity: 0.7;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
 
-.partner-logos-fixed img:hover {
-    opacity: 1;
-    transform: scale(1.05);
-}
+    .partner-logos-fixed img:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
@@ -113,9 +114,10 @@
     <a href="contact.html">CONTACT</a>
   </nav>
 
-  <!-- Link Centralizado -->
+  <!-- Links Centralizados Verticalmente e Alinhados à Esquerda -->
   <div class="center-link">
     <a href="https://www.instagram.com/bando.cc" target="_blank">INSTAGRAM</a>
+    <a href="https://www.strava.com/clubs/bandocc" target="_blank">STRAVA</a>
   </div>
 
   <!-- Logos dos Parceiros -->
@@ -126,6 +128,7 @@
     <a href="https://www.sensebike.com.br/collections/swift-estrada" target="_blank">
       <img src="assets/parceiro2.png" alt="Swift by Sense" />
     </a>
+  </div>
 
 </body>
 </html>
