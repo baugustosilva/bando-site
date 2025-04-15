@@ -4,8 +4,8 @@
     <title>ABOUT - BANDO.CC | O ciclismo é uma facção a cada dia mais organizada.</title>
     <meta charset="UTF-8">
     <style>
-        body { 
-            margin: 0; 
+        body {
+            margin: 0;
             font-family: Helvetica, Arial, sans-serif;
             color: #eae1b9;
             overflow-x: hidden;
@@ -13,8 +13,7 @@
             display: flex;
             flex-direction: column;
         }
-        
-        /* Menu Superior */
+
         .menu {
             position: fixed;
             top: 30px;
@@ -35,19 +34,14 @@
         .menu a:hover {
             color: #6b6b53;
         }
-        .menu a:nth-child(1) {
-            margin-right: auto;
-        }
+        .menu a:nth-child(1) { margin-right: auto; }
         .menu a:nth-child(2) {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
         }
-        .menu a:nth-child(3) {
-            margin-left: auto;
-        }
-        
-        /* Video Background */
+        .menu a:nth-child(3) { margin-left: auto; }
+
         .video-bg {
             position: fixed;
             top: 0;
@@ -57,8 +51,6 @@
             object-fit: cover;
             z-index: -2;
         }
-        
-        /* Overlay */
         .overlay {
             position: fixed;
             top: 0;
@@ -68,16 +60,15 @@
             background: rgba(0,0,0,0.5);
             z-index: -1;
         }
-        
-        /* Container de Conteúdo - Centralizado Verticalmente */
+
         .main-content {
             flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 80px 0; /* Espaço para o menu e logo */
+            padding: 80px 0;
         }
-        
+
         .content-container {
             max-width: 800px;
             width: 90%;
@@ -88,7 +79,7 @@
             box-shadow: 0 0 20px rgba(0,0,0,0.5);
             z-index: 10;
         }
-        
+
         h1 {
             color: #6b6b53;
             font-size: 28px;
@@ -96,14 +87,13 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        
+
         p {
             line-height: 1.6;
             margin-bottom: 15px;
             font-size: 16px;
         }
-        
-        /* Logo fixa no rodapé */
+
         .footer-logo {
             display: block;
             width: 200px;
@@ -111,18 +101,15 @@
             position: relative;
             z-index: 10;
         }
-        
-        /* Responsividade */
+
         @media (max-width: 768px) {
             .menu a {
                 font-size: 18px;
             }
-            
             .content-container {
                 padding: 25px;
                 width: 85%;
             }
-            
             .footer-logo {
                 width: 150px;
                 margin: 30px auto;
@@ -130,70 +117,101 @@
         }
 
         .partner-logos-fixed {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    z-index: 20;
-}
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 20;
+        }
+        .partner-logos-fixed img {
+            width: 120px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .partner-logos-fixed img:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
 
-.partner-logos-fixed img {
-    width: 120px; /* ajuste conforme necessário */
-    opacity: 0.7;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.partner-logos-fixed img:hover {
-    opacity: 1;
-    transform: scale(1.05);
-}
+        .language-switch {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+        .language-switch a {
+            color: #eae1b9;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .language-switch a.active {
+            color: #6b6b53;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
-    <!-- Menu Superior -->
     <nav class="menu">
         <a href="index.html">HOME</a>
         <a href="about.html">ABOUT</a>
         <a href="contact.html">CONTACT</a>
     </nav>
 
-    <!-- Vídeo de Fundo -->
     <video autoplay muted loop playsinline class="video-bg">
         <source src="assets/bando.mp4" type="video/mp4">
     </video>
     <div class="overlay"></div>
 
-    <!-- Conteúdo Principal Centralizado -->
     <div class="main-content">
         <div class="content-container">
+            <div class="language-switch">
+                <a id="btn-pt" class="active" onclick="switchLanguage('pt')">PT</a>
+                <a id="btn-en" onclick="switchLanguage('en')">EN</a>
+            </div>
 
-            <p>O BANDO não nasceu com um plano.</p>
-            
-            <p>Nasceu do impulso de pedalar, de estar junto, de formar um corpo em movimento. Um grupo que se move como se move uma ideia — viva, orgânica e concreta.</p>
-            
-            <p>Não somos assessoria e não temos protocolo. Somos um coletivo. Um organismo que pedala porque o mundo exige. Porque o corpo pede. Porque estar em grupo faz sentido quando a paisagem muda.</p>
-            
-            <p>Nosso ciclismo não se limita à estrada: ele é linguagem, é estética, é maneira de existir. Registramos nossos encontros porque sabemos que memória sem registro se desfaz. Mas o que documentamos não é só o pedal — é a vida que cabe entre a largada e a pausa pro café.</p>
+            <div id="text-pt">
+                <p>O BANDO não nasceu com um plano.</p>
+                <p>Nasceu do impulso de pedalar, de estar junto, de formar um corpo em movimento. Um grupo que se move como se move uma ideia — viva, orgânica e concreta.</p>
+                <p>Não somos assessoria e não temos protocolo. Somos um coletivo. Um organismo que pedala porque o mundo exige. Porque o corpo pede. Porque estar em grupo faz sentido quando a paisagem muda.</p>
+                <p>Nosso ciclismo não se limita à estrada: ele é linguagem, é estética, é maneira de existir. Registramos nossos encontros porque sabemos que memória sem registro se desfaz. Mas o que documentamos não é só o pedal — é a vida que cabe entre a largada e a pausa pro café.</p>
+                <p>Acreditamos no conteúdo como forma de partilha e na bicicleta como extensão do que somos: reais, tangíveis, imperfeitos e em constante movimento.</p>
+                <p>Um bando, no sentido mais amplo da palavra — de amigos, de ideias, de intenções. De quem compete, de quem contempla, de quem constrói comunidade sem pedir licença.</p>
+            </div>
 
-            <p>Acreditamos no conteúdo como forma de partilha e na bicicleta como extensão do que somos: reais, tangíveis, imperfeitos e em constante movimento.</p>
-
-            <p>Um bando, no sentido mais amplo da palavra — de amigos, de ideias, de intenções. De quem compete, de quem contempla, de quem constrói comunidade sem pedir licença.</p>
+            <div id="text-en" style="display: none;">
+                <p>BANDO wasn’t born from a plan.</p>
+                <p>It was born from the urge to ride, to be together, to form a moving body. A group that moves like an idea moves — alive, organic, and concrete.</p>
+                <p>We’re not a training team, and we don’t follow a protocol. We’re a collective. An organism that rides because the world demands it. Because the body asks for it. Because riding in a group makes sense when the landscape changes.</p>
+                <p>Our cycling isn’t limited to the road: it’s language, it’s aesthetic, it’s a way of existing. We document our gatherings because we know that memory without record fades. But what we document isn’t just the ride — it’s the life that fits between the start and the coffee stop.</p>
+                <p>We believe in content as a way of sharing and in the bike as an extension of who we are: real, tangible, imperfect, and in constant motion.</p>
+                <p>A bando, in the broadest sense of the word — of friends, of ideas, of intentions. Of those who compete, those who contemplate, those who build community without asking permission.</p>
+            </div>
         </div>
 
-        <!-- Logo Fixa -->
         <img src="assets/logo-bando-1.png" class="footer-logo" alt="BANDO">
     </div>
 
-     <!-- Logos dos Parceiros -->
-  <div class="partner-logos-fixed">
-    <a href="https://www.nomadsports.com.br/" target="_blank">
-      <img src="assets/parceiro1.png" alt="Nomad Sports" />
-    </a>
-    <a href="https://www.sensebike.com.br/collections/swift-estrada" target="_blank">
-      <img src="assets/parceiro2.png" alt="Swift by Sense" />
-    </a>
-  </div>
+    <div class="partner-logos-fixed">
+        <a href="https://www.nomadsports.com.br/" target="_blank">
+            <img src="assets/parceiro1.png" alt="Nomad Sports" />
+        </a>
+        <a href="https://www.sensebike.com.br/collections/swift-estrada" target="_blank">
+            <img src="assets/parceiro2.png" alt="Swift by Sense" />
+        </a>
+    </div>
+
+    <script>
+        function switchLanguage(lang) {
+            document.getElementById('text-pt').style.display = lang === 'pt' ? 'block' : 'none';
+            document.getElementById('text-en').style.display = lang === 'en' ? 'block' : 'none';
+            document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+        }
+    </script>
 </body>
 </html>
